@@ -13,20 +13,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const ColorCounter = ({ color, setColor }) => {
-  const increase = () =>
-    setColor((currentColor) => Math.min(255, currentColor + 5));
-
-  const decrease = () =>
-    setColor((currentColor) => Math.max(0, currentColor - 5));
-
-  return (
-    <View style={styles.spaced}>
-      <Text style={styles.centeredText}>{color}</Text>
-      <Button title={`Increase ${color}`} onPress={increase} />
-      <Button title={`Decrease ${color}`} onPress={decrease} />
-    </View>
-  );
-};
+const ColorCounter = ({ color, increase, decrease }) => (
+  <View style={styles.spaced}>
+    <Text style={styles.centeredText}>{color}</Text>
+    <Button title={`Increase ${color}`} onPress={increase} />
+    <Button title={`Decrease ${color}`} onPress={decrease} />
+  </View>
+);
 
 export default ColorCounter;
